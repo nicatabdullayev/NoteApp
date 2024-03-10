@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".navigation_fragments.RegisterFragment"
+    android:background="@color/background_color">
+
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="290dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="564dp"
+        android:background="@drawable/button_rectangle_drawable"
+        android:text="Register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="222sp"
+        android:layout_height="21sp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="188dp"
+        android:text="let’s help you meet up your task"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome_text_view"
+        android:layout_width="171sp"
+        android:layout_height="26sp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="152dp"
+        android:text="Welcome OnBoard!"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/confirm_pass_input"
+        android:layout_width="272dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/radius_input_drawble"
+        android:ems="10"
+        android:hint="     Confirm your password"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/enter_pass_input"
+        android:layout_width="272dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/radius_input_drawble"
+        android:ems="10"
+        android:hint="     Enter your password"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/fullname_input"
+        android:layout_width="272dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="284dp"
+        android:background="@drawable/radius_input_drawble"
+        android:ems="10"
+        android:hint="     Enter your fullname"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/email_address_input"
+        android:layout_width="272dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/radius_input_drawble"
+        android:ems="10"
+        android:hint="     Enter your email address"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/alreadey_have_account"
+        android:layout_width="145dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="620dp"
+        android:text="Already have an account? "
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/sign_in"
+        android:layout_width="38sp"
+        android:layout_height="17sp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="620dp"
+        android:text="sign in"
+        android:textColor="@color/button_color_1"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
