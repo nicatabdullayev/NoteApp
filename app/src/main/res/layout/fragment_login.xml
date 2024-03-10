@@ -53,7 +53,7 @@
         android:background="@drawable/radius_input_drawble"
         android:ems="10"
         android:hint="     Enter your password"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

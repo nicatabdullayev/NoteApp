@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
 import com.example.logregapp.R
 import com.example.logregapp.databinding.FragmentRegisterBinding
 import com.example.logregapp.databinding.FragmentSlashBinding
@@ -32,6 +34,7 @@ class RegisterFragment : Fragment() {
         binding.signIn.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }
+
         binding.btnRegister.setOnClickListener {
             val fullName = binding.fullnameInput.text.toString()
             val email = binding.emailAddressInput.text.toString()
@@ -90,6 +93,20 @@ class RegisterFragment : Fragment() {
 
             .show()
     }
-
+    private fun initSharedPrefs() {
+        val masterKey = MasterKey.Builder(requireContext())
+            .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+            .build()
+        var sharedPrefs = EncryptedSharedPreferences.create(
+            requireContext(),
+            USER_SHARED_PREF,
+            masterKey,
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+        )
+    }
+    companion object {
+        private const val USER_SHARED_PREF = "user_shared_pref"
+    }
 }
 

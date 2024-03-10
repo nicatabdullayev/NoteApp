@@ -62,5 +62,5 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
-
+    implementation ("androidx.security:security-crypto:1.1.0-alpha06")
 }

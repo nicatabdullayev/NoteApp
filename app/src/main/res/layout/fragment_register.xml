@@ -57,11 +57,12 @@
         android:background="@drawable/radius_input_drawble"
         android:ems="10"
         android:hint="     Confirm your password"
-        android:inputType="text"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+
         android:id="@+id/enter_pass_input"
         android:layout_width="272dp"
         android:layout_height="36dp"
@@ -70,7 +71,7 @@
         android:background="@drawable/radius_input_drawble"
         android:ems="10"
         android:hint="     Enter your password"
-        android:inputType="text"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
