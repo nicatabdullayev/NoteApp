@@ -6,12 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.example.logregapp.R
 import com.example.logregapp.databinding.FragmentDashBoardBinding
 import com.example.logregapp.databinding.FragmentLoginBinding
 
 
 class DashBoardFragment : Fragment() {
+    val arguments by navArgs<DashBoardFragmentArgs>()
 
     lateinit var binding: FragmentDashBoardBinding
 
@@ -25,12 +27,13 @@ class DashBoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.welcomeTextDashboard.setText( textViewForUserName())
+        val username = arguments.userName
+        binding.welcomeTextDashboard.setText( "Welcome $username")
     }
 
-    private fun textViewForUserName():String{
-        val sharedPreferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
-        val savedFullName = sharedPreferences.getString("Name",null)
-        return "Welcome $savedFullName"
-    }
+//    private fun textViewForUserName():String{
+//        val sharedPreferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
+//        val savedFullName = sharedPreferences.getString("Name",null)
+//        return "Welcome $savedFullName"
+//    }
 }

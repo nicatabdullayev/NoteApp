@@ -32,13 +32,15 @@ class SlashFragment : Fragment() {
         binding.btnGetStarted.setOnClickListener {
 
 //            findNavController().navigate(R.id.registerFragment)
+            val navToReg = SlashFragmentDirections.actionSlashFragmentToRegisterFragment()
+            val navToLog = SlashFragmentDirections.actionSlashFragmentToLoginFragment()
 
             val sharedPreferences = requireContext().getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
             if(sharedPreferences.getBoolean("hasCompletedSetup",true)){
-                findNavController().navigate(R.id.registerFragment)
+                findNavController().navigate(navToReg)
                 sharedPreferences.edit().putBoolean("hasCompletedSetup", false).apply()
             }else{
-                findNavController().navigate(R.id.action_slashFragment_to_loginFragment)
+                findNavController().navigate(navToLog)
 
             }
         }

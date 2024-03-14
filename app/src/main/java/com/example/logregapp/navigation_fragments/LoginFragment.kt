@@ -16,6 +16,7 @@ class LoginFragment : Fragment() {
 
    lateinit var binding: FragmentLoginBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -26,6 +27,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navLogToReg = LoginFragmentDirections.actionLoginFragmentToDashBoardFragment(getUserName())
         binding.signInLogin.setOnClickListener {
             findNavController().navigate(R.id.registerFragment)
         }
@@ -34,11 +36,16 @@ class LoginFragment : Fragment() {
         val password = binding.loginPassInput.text.toString()
 
             if (checkerUser(email,password)){
-                findNavController().navigate(R.id.dashBoardFragment)
+                findNavController().navigate(navLogToReg)
             }else{
                 showAlertDialogForLogin()
             }
         }
+    }
+    private fun getUserName():String?{
+            val sharedPreferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
+            val userName = sharedPreferences.getString("Name",null)
+        return userName
     }
     private fun checkerUser(email:String,password:String):Boolean{
         val sharedPreferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)

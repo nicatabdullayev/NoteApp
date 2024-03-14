@@ -16,7 +16,7 @@ import com.example.logregapp.databinding.FragmentRegisterBinding
 import com.example.logregapp.databinding.FragmentSlashBinding
 
 
-class RegisterFragment : Fragment() {
+ class RegisterFragment : Fragment() {
     lateinit var binding : FragmentRegisterBinding
 
 
@@ -24,19 +24,21 @@ class RegisterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         binding = FragmentRegisterBinding.inflate(inflater,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navToLog = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
         binding.signIn.setOnClickListener {
-            findNavController().navigate(R.id.loginFragment)
+            findNavController().navigate(navToLog)
         }
 
         binding.btnRegister.setOnClickListener {
             val fullName = binding.fullnameInput.text.toString()
+            val navToReg = RegisterFragmentDirections.actionRegisterFragmentToDashBoardFragment(fullName)
             val email = binding.emailAddressInput.text.toString()
             val password = binding.enterPassInput.text.toString()
             if (binding.confirmPassInput.text.isEmpty() || binding.enterPassInput.text.isEmpty() || binding.fullnameInput.text.isEmpty()|| binding.emailAddressInput.text.isEmpty() ){
@@ -44,7 +46,7 @@ class RegisterFragment : Fragment() {
             }else{
                 if (binding.enterPassInput.getText().toString() == binding.confirmPassInput.getText().toString() && saveUserData(fullName, email, password) ){
 
-                    findNavController().navigate(R.id.action_registerFragment_to_dashBoardFragment)
+                    findNavController().navigate(navToReg)
                 }else{
                     showAlertDialogForConfirmPass()
                 }
