@@ -64,4 +64,8 @@ dependencies {
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("androidx.security:security-crypto:1.1.0-alpha06")
+    implementation(project(":feature:notes"))
+    implementation(project(":feature:create_new"))
+    implementation(project(":feature:event"))
+    implementation(project(":feature:search"))
 }

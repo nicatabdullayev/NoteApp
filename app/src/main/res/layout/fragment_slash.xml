@@ -50,7 +50,7 @@ et velit interdum, ac aliquet odio mattis."
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_get_started"
         android:layout_width="252dp"
         android:layout_height="56dp"

@@ -15,4 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "LogRegApp"
 include(":app")
- 
+include(":feature:notes")
+include(":feature:event")
+include(":feature:search")
+include(":feature:create_new")

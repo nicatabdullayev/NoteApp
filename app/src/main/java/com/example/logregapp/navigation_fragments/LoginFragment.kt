@@ -2,13 +2,16 @@ package com.example.logregapp.navigation_fragments
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.logregapp.MainActivity
 import com.example.logregapp.R
+import com.example.logregapp.SecondMainActivity
 import com.example.logregapp.databinding.FragmentLoginBinding
 import com.example.logregapp.databinding.FragmentRegisterBinding
 
@@ -27,7 +30,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navLogToReg = LoginFragmentDirections.actionLoginFragmentToDashBoardFragment(getUserName())
+        val navLogToReg = LoginFragmentDirections.actionLoginFragmentToSecondMainActivity()
         binding.signInLogin.setOnClickListener {
             findNavController().navigate(R.id.registerFragment)
         }
@@ -42,6 +45,8 @@ class LoginFragment : Fragment() {
             }
         }
     }
+
+
     private fun getUserName():String?{
             val sharedPreferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
             val userName = sharedPreferences.getString("Name",null)

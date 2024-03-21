@@ -1,34 +1,29 @@
-package com.example.logregapp.navigation_fragments
+package com.example.notes
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
-import com.example.logregapp.R
-import com.example.logregapp.databinding.FragmentDashBoardBinding
-import com.example.logregapp.databinding.FragmentLoginBinding
+import com.example.notes.databinding.FragmentNotesBinding
 
 
-class DashBoardFragment : Fragment() {
-    val arguments by navArgs<DashBoardFragmentArgs>()
+class NotesFragment : Fragment() {
 
-    lateinit var binding: FragmentDashBoardBinding
+    lateinit var binding: FragmentNotesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = FragmentDashBoardBinding.inflate(inflater,container,false)
+        binding = FragmentNotesBinding.inflate(inflater,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val username = arguments.userName
-        binding.welcomeTextDashboard.setText( "Welcome $username")
+
     }
 
 //    private fun textViewForUserName():String{
