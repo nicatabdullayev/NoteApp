@@ -68,4 +68,7 @@ dependencies {
     implementation(project(":feature:create_new"))
     implementation(project(":feature:event"))
     implementation(project(":feature:search"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
+
 }

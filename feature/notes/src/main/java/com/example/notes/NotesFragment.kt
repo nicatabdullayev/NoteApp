@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.notes.databinding.FragmentNotesBinding
 
@@ -12,6 +13,8 @@ import com.example.notes.databinding.FragmentNotesBinding
 class NotesFragment : Fragment() {
 
     lateinit var binding: FragmentNotesBinding
+    val viewmodel by viewModels<NoteViewModel>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
