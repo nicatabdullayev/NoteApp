@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/create_nav"
+    app:startDestination="@id/getStartedFragment">
+    <fragment
+        android:id="@+id/getStartedFragment"
+        android:name="me.safarov399.auth.auth_pages.GetStartedFragment"
+        android:label="fragment_get_started"
+        tools:layout="@layout/fragment_get_started" >
+        <action
+            android:id="@+id/action_getStartedFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_getStartedFragment_to_profileFragment"-->
+<!--            app:destination="@id/profileFragment" />-->
+    </fragment>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="me.safarov399.auth.auth_pages.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+<!--        <action-->
+<!--            android:id="@+id/action_logInFragment_to_profileFragment"-->
+<!--            app:destination="@id/profileFragment" />-->
+        <action
+            android:id="@+id/action_logInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="me.safarov399.auth.auth_pages.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_signUpFragment_to_profileFragment"-->
+<!--            app:destination="@id/profileFragment" />-->
+
+    </fragment>
+
+</navigation>

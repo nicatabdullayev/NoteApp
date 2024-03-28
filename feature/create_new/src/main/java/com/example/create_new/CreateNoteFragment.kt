@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.example.core.ToolbarManager
 import com.example.create_new.databinding.FragmentCreateNoteBinding
 
 
@@ -29,6 +30,8 @@ class CreateNoteFragment : Fragment() {
             val subtitle = binding.subtitle.toString()
             viewmodel.saveNote(title,subtitle)
         }
+        (requireContext() as ToolbarManager).setTitle("Create Note")
+
     }
 }
 

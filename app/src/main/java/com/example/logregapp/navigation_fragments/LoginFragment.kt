@@ -9,11 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.logregapp.MainActivity
 import com.example.logregapp.R
-import com.example.logregapp.SecondMainActivity
+import com.example.logregapp.SecondActivity
 import com.example.logregapp.databinding.FragmentLoginBinding
-import com.example.logregapp.databinding.FragmentRegisterBinding
 
 class LoginFragment : Fragment() {
 
@@ -28,9 +26,10 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navLogToReg = LoginFragmentDirections.actionLoginFragmentToSecondMainActivity()
+
         binding.signInLogin.setOnClickListener {
             findNavController().navigate(R.id.registerFragment)
         }
@@ -39,7 +38,8 @@ class LoginFragment : Fragment() {
         val password = binding.loginPassInput.text.toString()
 
             if (checkerUser(email,password)){
-                findNavController().navigate(navLogToReg)
+                val intent = Intent(requireActivity(), SecondActivity::class.java)
+                requireActivity().startActivity(intent)
             }else{
                 showAlertDialogForLogin()
             }

@@ -1,0 +1,34 @@
+me.safarov399.ui
+attr icon
+attr iconColor
+attr text
+color black
+color default_button_background_color
+color white
+dimen default_corner_radius
+dimen default_edittext_corner_radius
+dimen default_edittext_min_width
+dimen default_edittext_padding
+dimen default_min_height
+dimen default_min_width
+dimen default_padding
+drawable circle
+drawable ic_events
+drawable ic_favourites_star
+drawable ic_hidden
+drawable ic_notes
+drawable ic_search
+drawable ic_three_dots_button
+drawable ic_trash
+id btn_go_back
+id cl_icon_container
+id customButton
+id iv_icon
+id menu_button
+id subTitle
+id title
+id tv_content
+layout icon_list_tile_view
+layout sigma_button
+layout sigma_toolbar
+styleable IconListTileView icon iconColor text

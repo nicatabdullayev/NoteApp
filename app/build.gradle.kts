@@ -70,5 +70,6 @@ dependencies {
     implementation(project(":feature:search"))
     implementation(project(":domain"))
     implementation(project(":data"))
+    implementation(project(":core"))
 
 }

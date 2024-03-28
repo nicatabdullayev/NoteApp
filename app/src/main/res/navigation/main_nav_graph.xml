@@ -25,22 +25,10 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_registerFragment_to_secondMainActivity"
-            app:destination="@id/secondMainActivity" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.logregapp.navigation_fragments.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_secondMainActivity"
-            app:destination="@id/secondMainActivity" />
-    </fragment>
-    <activity
-        android:id="@+id/secondMainActivity"
-        android:name="com.example.logregapp.SecondMainActivity"
-        android:label="second_activity"
-        tools:layout="@layout/second_activity" />
+        tools:layout="@layout/fragment_login" />
 </navigation>

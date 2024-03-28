@@ -1,6 +1,5 @@
 package com.example.logregapp.navigation_fragments
 
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -8,18 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
-import com.example.logregapp.MainActivity
-import com.example.logregapp.R
-import com.example.logregapp.SecondMainActivity
+import com.example.logregapp.SecondActivity
 import com.example.logregapp.databinding.FragmentRegisterBinding
-import com.example.logregapp.databinding.FragmentSlashBinding
 
 
- class RegisterFragment : Fragment() {
+class RegisterFragment : Fragment() {
     lateinit var binding : FragmentRegisterBinding
 
 
@@ -41,15 +36,14 @@ import com.example.logregapp.databinding.FragmentSlashBinding
 
         binding.btnRegister.setOnClickListener {
             val fullName = binding.fullnameInput.text.toString()
-            val navToReg = RegisterFragmentDirections.actionRegisterFragmentToSecondMainActivity()
             val email = binding.emailAddressInput.text.toString()
             val password = binding.enterPassInput.text.toString()
             if (binding.confirmPassInput.text.isEmpty() || binding.enterPassInput.text.isEmpty() || binding.fullnameInput.text.isEmpty()|| binding.emailAddressInput.text.isEmpty() ){
                 showAlertDialogForImputs()
             }else{
                 if (binding.enterPassInput.getText().toString() == binding.confirmPassInput.getText().toString() && saveUserData(fullName, email, password) ){
-
-                    findNavController().navigate(navToReg)
+                    val intent = Intent(requireActivity(), SecondActivity::class.java)
+                    requireActivity().startActivity(intent)
                 }else{
                     showAlertDialogForConfirmPass()
                 }

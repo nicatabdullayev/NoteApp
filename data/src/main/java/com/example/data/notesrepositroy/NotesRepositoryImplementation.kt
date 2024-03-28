@@ -7,4 +7,8 @@ class NotesRepositoryImplementation : NotesRepository {
     override fun addNote(note: MyDataNote) {
 
     }
+
+    override fun saveNote(title: String, subtitle: String) {
+
+    }
 }

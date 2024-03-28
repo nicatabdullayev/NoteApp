@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <me.safarov399.ui.custom_views.SigmaButton
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/customButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button_background"
+        android:minWidth="200dp"
+        android:minHeight="100dp"
+        android:textColor="#ffffff"
+        android:text="Your Text Here"/>

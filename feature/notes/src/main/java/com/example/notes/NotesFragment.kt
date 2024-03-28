@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.example.core.ToolbarManager
+//import com.example.logregapp.navigation_fragments.ToolbarManager
 import com.example.notes.databinding.FragmentNotesBinding
 
 
@@ -26,6 +28,7 @@ class NotesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (requireContext() as ToolbarManager).setTitle("Notes")
 
     }
 
