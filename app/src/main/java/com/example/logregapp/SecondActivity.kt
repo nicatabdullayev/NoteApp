@@ -8,6 +8,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.logregapp.databinding.ActivitySecondBinding
 import com.example.core.ToolbarManager
+import com.example.data.notesrepositroy.database.DatabaseManager
 
 class SecondActivity : AppCompatActivity() , com.example.core.ToolbarManager {
     private lateinit var binding: ActivitySecondBinding
@@ -35,6 +36,8 @@ class SecondActivity : AppCompatActivity() , com.example.core.ToolbarManager {
         )
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
         binding.bottomNavigationView.setupWithNavController(navController)
+
+        DatabaseManager.initDatabase(this)
 
     }
 

@@ -30,6 +30,7 @@ class NotesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (requireContext() as ToolbarManager).setTitle("Notes")
 
+
     }
 
 //    private fun textViewForUserName():String{

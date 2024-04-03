@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.core.ToolbarManager
 import com.example.create_new.databinding.FragmentCreateNoteBinding
+import com.example.notes.databinding.FragmentNotesBinding
 
 
 class CreateNoteFragment : Fragment() {
     private lateinit var binding: FragmentCreateNoteBinding
     val viewmodel by viewModels<CreateNewViewModel>()
+
 
 
     override fun onCreateView(
@@ -30,7 +32,10 @@ class CreateNoteFragment : Fragment() {
             val subtitle = binding.subtitle.toString()
             viewmodel.saveNote(title,subtitle)
         }
-        (requireContext() as ToolbarManager).setTitle("Create Note")
+        viewmodel.livedata.observe(viewLifecycleOwner){
+
+        }
+        (requireContext() as ToolbarManager).setTitle("Create Note ")
 
     }
 }
