@@ -22,13 +22,19 @@ class NotesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = FragmentNotesBinding.inflate(inflater,container,false)
+        binding = FragmentNotesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireContext() as ToolbarManager).setTitle("Notes")
+
+        viewmodel.livedata.observe(viewLifecycleOwner) { list ->
+            if (list.isNotEmpty())
+                binding.showDatabase.text = "${list.first()}\n"
+        }
+
 
     }
 

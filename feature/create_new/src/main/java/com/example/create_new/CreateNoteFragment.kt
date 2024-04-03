@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.core.ToolbarManager
 import com.example.create_new.databinding.FragmentCreateNoteBinding
+import com.example.notes.databinding.FragmentNotesBinding
 
 
 class CreateNoteFragment : Fragment() {
     private lateinit var binding: FragmentCreateNoteBinding
     val viewmodel by viewModels<CreateNewViewModel>()
+
 
 
     override fun onCreateView(
@@ -26,11 +28,14 @@ class CreateNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.saveButton.setOnClickListener{
-            val title = binding.title.toString()
-            val subtitle = binding.subtitle.toString()
+            val title = binding.title.text.toString()
+            val subtitle = binding.subtitle.text.toString()
             viewmodel.saveNote(title,subtitle)
         }
-        (requireContext() as ToolbarManager).setTitle("Create Note")
+        viewmodel.livedata.observe(viewLifecycleOwner){
+
+        }
+        (requireContext() as ToolbarManager).setTitle("Create Note ")
 
     }
 }
