@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class NoteViewModel : ViewModel(){
     private val notesRepository : NotesRepository by lazy { NotesRepositoryImplementation() }
-    private var _livedata = notesRepository.getNotesLists()
-    val livedata : LiveData<List<MyDataNote>> = _livedata
+    private val _livedata = MutableLiveData<String>()
+    val livedata: LiveData<List<MyDataNote>> = notesRepository.getNotesLists()
 
 }

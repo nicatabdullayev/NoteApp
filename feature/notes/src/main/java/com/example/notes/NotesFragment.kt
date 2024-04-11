@@ -10,11 +10,13 @@ import androidx.navigation.fragment.navArgs
 import com.example.core.ToolbarManager
 //import com.example.logregapp.navigation_fragments.ToolbarManager
 import com.example.notes.databinding.FragmentNotesBinding
+import com.example.notes.note_list.NotesAdapter
 
 
 class NotesFragment : Fragment() {
 
     lateinit var binding: FragmentNotesBinding
+    private lateinit var adapter: NotesAdapter
     val viewmodel by viewModels<NoteViewModel>()
 
 
@@ -31,11 +33,11 @@ class NotesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireContext() as ToolbarManager).setTitle("Notes")
+        adapter = NotesAdapter()
+        binding.notesList.adapter = adapter
 
         viewmodel.livedata.observe(viewLifecycleOwner) { list ->
-            if (list.isNotEmpty())
-                binding.showDatabase.text = "${list.first()}\n"
-        }
+            adapter.submitList(list)
 
 
     }
@@ -45,4 +47,4 @@ class NotesFragment : Fragment() {
 //        val savedFullName = sharedPreferences.getString("Name",null)
 //        return "Welcome $savedFullName"
 //    }
-}
+}}

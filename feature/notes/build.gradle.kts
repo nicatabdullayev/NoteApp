@@ -59,4 +59,10 @@ dependencies {
 
     implementation(project(":core"))
 
+    //Picasso
+    implementation ("com.squareup.picasso:picasso:2.8")
+
+    //Coil
+    implementation("io.coil-kt:coil:2.6.0")
+
 }
