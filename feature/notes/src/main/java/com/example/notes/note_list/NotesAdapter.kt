@@ -31,16 +31,16 @@ class NotesAdapter : ListAdapter<MyDataNote, NotesAdapter.NotesViewHolder>(NoteD
         fun bindData(note: MyDataNote) {
             notesItemBinding.title.text = note.title
             notesItemBinding.subTitle.text = note.subtitle
-            notesItemBinding.noteIcon.load("") {
-//                listener(
-//                    onError = { _, _ ->
-//                        Toast.makeText(notesItemBinding.root.context, "Fail", Toast.LENGTH_LONG).show()
-//                    },
-//                    onSuccess = { _, _ ->
-//                        Toast.makeText(notesItemBinding.root.context, "Success", Toast.LENGTH_LONG).show()
-//                    }
-//                )
-            }
+//            notesItemBinding.noteIcon.load("") {
+////                listener(
+////                    onError = { _, _ ->
+////                        Toast.makeText(notesItemBinding.root.context, "Fail", Toast.LENGTH_LONG).show()
+////                    },
+////                    onSuccess = { _, _ ->
+////                        Toast.makeText(notesItemBinding.root.context, "Success", Toast.LENGTH_LONG).show()
+////                    }
+////                )
+//            }
         }
     }
 

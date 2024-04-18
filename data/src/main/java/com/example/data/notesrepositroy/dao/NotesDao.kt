@@ -7,6 +7,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.domain.entity.entity.MyDataNote
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface NotesDao {
@@ -20,5 +21,5 @@ interface NotesDao {
     fun update(note:MyDataNote)
 
     @Query("SELECT * FROM notes")
-    fun getAll() : LiveData<List<MyDataNote >>
+    fun getAll() : Flow<List<MyDataNote >>
 }

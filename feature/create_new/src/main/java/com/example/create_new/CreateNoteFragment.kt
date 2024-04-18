@@ -5,38 +5,51 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelStore
+import com.example.core.BaseFragment
 import com.example.core.ToolbarManager
 import com.example.create_new.databinding.FragmentCreateNoteBinding
 import com.example.notes.databinding.FragmentNotesBinding
 
 
-class CreateNoteFragment : Fragment() {
-    private lateinit var binding: FragmentCreateNoteBinding
-    val viewmodel by viewModels<CreateNewViewModel>()
+class CreateNoteFragment : BaseFragment<FragmentCreateNoteBinding, CreateNewViewModel, CreateNewState, CreateNewEffect, CreateNewEvent>() {
+//    val viewmodel by viewModels<CreateNewViewModel>()
 
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        binding = FragmentCreateNoteBinding.inflate(inflater,container,false)
-        return binding.root
+    override val getViewBinding: (LayoutInflater, ViewGroup?, Boolean) -> FragmentCreateNoteBinding = { inflater, viewGroup, value ->
+        FragmentCreateNoteBinding.inflate(inflater, viewGroup, value)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.saveButton.setOnClickListener{
-            val title = binding.title.text.toString()
-            val subtitle = binding.subtitle.text.toString()
-            viewmodel.saveNote(title,subtitle)
+            viewModel.postEvent(
+                CreateNewEvent.AddNote(
+                    binding.title.text.toString(),
+                    binding.subtitle.text.toString()
+                )
+            )
         }
-        viewmodel.livedata.observe(viewLifecycleOwner){
-
-        }
+//        viewmodel.livedata.observe(viewLifecycleOwner){
+//
+//        }
         (requireContext() as ToolbarManager).setTitle("Create Note ")
 
+    }
+
+    override fun getViewModelClass() = CreateNewViewModel::class.java
+
+//    override fun onStateUpdate(state: CreateNewState) {
+//
+//    }
+
+    override fun onEffectUpdate(effect: CreateNewEffect) {
+        when (effect) {
+            CreateNewEffect.OnNoteAdded -> Toast.makeText(requireContext(), "Note Added", Toast.LENGTH_SHORT).show()
+        }
     }
 }
 
