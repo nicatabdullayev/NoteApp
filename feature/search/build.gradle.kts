@@ -39,6 +39,9 @@ dependencies {
 
     val nav_version = "2.7.7"
 
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":core"))
 
 
     // Kotlin

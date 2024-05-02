@@ -78,4 +78,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
 
+//    //Firebase
+//    implementation ("com.google.firebase:firebase-bom:32.8.1")
+//    implementation ("com.google.firebase:firebase-analytics")
+//    implementation ("com.google.firebase:firebase-crashlytics")
+//    implementation ("com.google.firebase:firebase-messaging")
+
 }
