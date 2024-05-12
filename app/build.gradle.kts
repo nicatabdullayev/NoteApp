@@ -2,6 +2,9 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    id ("org.jetbrains.kotlin.kapt" )
+    id ("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -83,5 +86,11 @@ dependencies {
 //    implementation ("com.google.firebase:firebase-analytics")
 //    implementation ("com.google.firebase:firebase-crashlytics")
 //    implementation ("com.google.firebase:firebase-messaging")
+
+    implementation ("com.google.dagger:dagger:2.49")
+    kapt("com.google.dagger:dagger-compiler:2.48")
+
+    implementation ("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-compiler:2.44")
 
 }

@@ -11,6 +11,9 @@ import com.example.core.BaseFragment
 import com.example.core.ToolbarManager
 
 import com.example.search.databinding.FragmentSearchBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class SearchFragment :
     BaseFragment<FragmentSearchBinding, SearchViewModel, SearchState, SearchEffect, SearchEvent>() {

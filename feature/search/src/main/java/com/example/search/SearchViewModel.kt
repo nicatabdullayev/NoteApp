@@ -6,9 +6,10 @@ import com.abbtech.domain.entities.response_models.NoteResponseModel
 import com.example.core.BaseViewModel
 import com.example.data.notesrepositroy.NotesRepositoryImplementation
 import com.example.domain.entity.repositories.NotesRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-
+@HiltViewModel
 class SearchViewModel : BaseViewModel<SearchState, SearchEffect, SearchEvent>() {
 
     private val notesRepository: NotesRepository by lazy { NotesRepositoryImplementation() }

@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id ("org.jetbrains.kotlin.kapt" )
+    id ("com.google.dagger.hilt.android")
 }
 
 android {
@@ -73,4 +74,7 @@ dependencies {
 
     implementation ("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+
+    implementation ("com.google.dagger:hilt-android:2.44")
+    kapt ("com.google.dagger:hilt-compiler:2.44")
 }

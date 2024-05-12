@@ -12,7 +12,9 @@ import com.example.core.ToolbarManager
 //import com.example.logregapp.navigation_fragments.ToolbarManager
 import com.example.notes.databinding.FragmentNotesBinding
 import com.example.notes.note_list.NotesAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class NotesFragment : BaseFragment<FragmentNotesBinding, NoteViewModel, NoteState, NoteEffect, NoteEvent>() {
 

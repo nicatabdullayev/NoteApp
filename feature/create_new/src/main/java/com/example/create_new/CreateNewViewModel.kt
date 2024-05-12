@@ -7,11 +7,12 @@ import com.example.core.BaseViewModel
 import com.example.data.notesrepositroy.NotesRepositoryImplementation
 import com.example.domain.entity.entity.MyDataNote
 import com.example.domain.entity.repositories.NotesRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-
+@HiltViewModel
 class CreateNewViewModel : BaseViewModel<CreateNewState, CreateNewEffect, CreateNewEvent>() {
     private val repository : NotesRepository by lazy { NotesRepositoryImplementation() }
 

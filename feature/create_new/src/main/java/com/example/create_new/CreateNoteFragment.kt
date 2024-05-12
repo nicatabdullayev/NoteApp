@@ -12,7 +12,9 @@ import com.example.core.BaseFragment
 import com.example.core.ToolbarManager
 import com.example.create_new.databinding.FragmentCreateNoteBinding
 import com.example.notes.databinding.FragmentNotesBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class CreateNoteFragment : BaseFragment<FragmentCreateNoteBinding, CreateNewViewModel, CreateNewState, CreateNewEffect, CreateNewEvent>() {
 //    val viewmodel by viewModels<CreateNewViewModel>()

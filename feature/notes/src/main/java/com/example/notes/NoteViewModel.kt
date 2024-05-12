@@ -5,11 +5,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.core.BaseViewModel
 import com.example.data.notesrepositroy.NotesRepositoryImplementation
 import com.example.domain.entity.repositories.NotesRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-
+@HiltViewModel
 class NoteViewModel : BaseViewModel<NoteState, NoteEffect, NoteEvent>() {
     private val notesRepository : NotesRepository by lazy { NotesRepositoryImplementation() }
     init {
